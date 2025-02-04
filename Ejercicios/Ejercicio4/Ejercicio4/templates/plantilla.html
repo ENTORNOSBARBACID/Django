@@ -1,0 +1,6 @@
+{% extends "index.html" %}{% block seccion %} {% for i in asignaturas %}
+<p>nombre: {{i.nombre}}</p>
+<p>Curso: {{i.clase}}</p>
+<p>Horas Trabajadas: {{i.horas}}</p>
+<p>-----------------------------</p>
+{% endfor %}{% endblock %}

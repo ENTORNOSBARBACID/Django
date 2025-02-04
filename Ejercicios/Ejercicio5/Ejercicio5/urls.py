@@ -1,5 +1,5 @@
 """
-URL configuration for Ejercicio3 project.
+URL configuration for Ejercicio4 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -16,8 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Ejercicio3.views import plantilla
+from Primero.views import mostrar
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("", plantilla)
+    path('', mostrar),
 ]

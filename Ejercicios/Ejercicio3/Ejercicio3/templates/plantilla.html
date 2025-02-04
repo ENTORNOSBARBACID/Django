@@ -1,3 +1,8 @@
-{%extends "index.html"%}{%block seccion%} {% for i in lenguajes %}
-<p>i</p>
-{%endfor%} {%endblock%}
+{% extends "index.html" %}{% block seccion %}
+<h1>Lista de Lenguajes</h1>
+<ol>
+  {% for lenguaje in Lenguajes %}
+  <li>{{lenguaje}}</li>
+  {% endfor %}
+</ol>
+{% endblock %}
