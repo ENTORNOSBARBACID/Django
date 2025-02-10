@@ -1,0 +1,9 @@
+{% extends "index.html" %}{% block datos %}
+{{nombre}}<br>
+{{email}}<br>
+{{sexo}}<br>
+{{temas}}<br>
+{% for i in preferencias%}
+{{i}}<br>
+{% endfor %}
+{% endblock %}
