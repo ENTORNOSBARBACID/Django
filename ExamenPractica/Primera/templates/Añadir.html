@@ -1,0 +1,25 @@
+{% extends "index.html" %}{%block añadir%}
+<form action="{% url 'sal2' %}" method="POST">
+    <div class="form-group">
+        {% csrf_token %}
+      <div class="form-group">
+        <label for="id_nombre">Nombre</label>
+        {{ form.nombre }}
+      </div>
+
+        <label for="id_email">Email</label>
+        {{ form.email }}
+      </div>
+      
+      <div class="form-group">
+        <label for="id_contraseña">Contraseña</label>
+        {{ form.contraseña }}
+      </div>
+      <div class="form-group">
+        <label for="id_lab">Laboratorio</label>
+        {{ form.laboratorio }}
+      </div>
+      {{mensaje}}
+      <input type="submit" class="btn btn-success btn-lg" value="Aceptar">
+</form>
+{% endblock %}
