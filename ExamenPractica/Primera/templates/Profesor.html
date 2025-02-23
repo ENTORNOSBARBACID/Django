@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Enlaza el archivo CSS -->
+
+</head><style>
+
+    table {
+        width: 100%; 
+        border-collapse: collapse;
+        margin: 20px 0; 
+        font-family: Arial, sans-serif;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    
+    thead th {
+        background-color: #007BFF; 
+        color: white;
+        padding: 12px 15px; 
+        text-align: left;
+        font-weight: bold; 
+        text-transform: uppercase; 
+    }
+    
+    
+    tbody td {
+        padding: 12px 15px; 
+        border-bottom: 1px solid #ddd; 
+    }
+    
+    tbody tr:nth-child(odd) {
+        background-color: #f9f9f9; 
+    }
+    
+    
+    tbody tr:hover {
+        background-color: #f1f1f1; 
+    }
+    
+    
+    a {
+        color: #007BFF;
+        text-decoration: none; 
+        font-weight: bold; 
+    }
+    
+    a:hover {
+        text-decoration: underline; 
+        color: #0056b3; 
+    }
+    
+    a[href*="res"] {
+        background-color: #28a745;
+        color: white;
+        padding: 5px 10px; 
+        border-radius: 5px; 
+    }
+    
+    a[href*="res"]:hover {
+        background-color: #218838; 
+    }
+    
+    
+    a[href*="det"] {
+        background-color: #17a2b8;
+        color: white; 
+        padding: 5px 10px; 
+        border-radius: 5px;
+    }
+    
+    a[href*="det"]:hover {
+        background-color: #138496;
+    }
+    </style>
+<body>
+    <p>Hola, {{form.email}}</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Número de Ordenadores</th>
+                <th>Email del Técnico</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for item in laboratorios%}
+            <tr>
+            <td>
+              {{item.nombre}}
+            </td>
+            <td>
+                {{item.numeroOrdenadores}}
+            </td>
+            <td>
+                {{item.email}}
+            </td>   
+        </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+
+    <a href="{% url 'alta'%}">Alta Incidencia</a>
+    <br>
+
+    {% if mensaje %}
+    <h2>{{mensaje}}</h2>
+    {% endif %}
+</body>
+</html>

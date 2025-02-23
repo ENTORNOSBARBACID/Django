@@ -1,0 +1,29 @@
+{%extends "alta.html"%}{%block alta%}
+<form action="{% url 'alta' %}" method="POST">
+    <div class="form-group">
+        {% csrf_token %}
+      <div class="form-group">
+        <label for="id_nombre">Email</label>
+        {{ form.email }}
+      </div>
+
+        <label for="id_email">Laboratorio</label>
+        {{ form.laboratorio }}
+      </div>
+      
+      <div class="form-group">
+        <label for="id_contraseña"></label>
+        {{ form.contraseña }}
+      </div>
+      <div class="form-group">
+        <label for="id_lab">Numero del Ordenador</label>
+        {{ form.nombre }}
+      </div>
+      <div class="form-group">
+        <label for="id_lab">Breve descripcion</label>
+        {{ form.descripcion }}
+      </div>
+      {{mensaje}}
+      <input type="submit" class="btn btn-success btn-lg" value="Aceptar">
+</form>
+{% endblock %}

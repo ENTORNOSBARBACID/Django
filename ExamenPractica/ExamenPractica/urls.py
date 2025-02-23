@@ -16,10 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Primera.views import mostrar, salir, salir2
+from Primera.views import mostrar, salir, salir2, alta, resolver, detalles
 
 urlpatterns = [
     path('', mostrar, name="mos"),
     path('salir/', salir, name="sal"),
     path('salir2/', salir2, name="sal2"),
+    path('alta/', alta, name="alta"),
+    path('resolver/<int:id>', resolver, name="res"),
+    path('detalles/<int:id>', detalles, name="det"),
 ]

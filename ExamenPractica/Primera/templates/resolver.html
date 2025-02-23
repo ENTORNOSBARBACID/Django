@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,11 +87,29 @@ input[type="submit"]:hover {
     color: #155724; /* Texto verde oscuro */
 }
 </style>
-<body style="display:flex; justify-content: center;align-items: center;">
-    <img src="{% static 'imagen/servicio-tecnico.jpg' %}" style="width: 400px;height: 200px;">
-    {%block formulario%}{%endblock%}
-    {% if mensaje %}
-    <p>{{mensaje}}</p>
-    {% endif %}
+<body>
+    <form action="{% url 'res' id=numero %}" method="POST">
+        <div class="form-group">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_nombre">Numero de Incidencia</label>
+                {{ form.numero }}
+              </div>
+          <div class="form-group">
+            <label for="id_nombre">Email del Tecnico</label>
+            {{ form.email }}
+          </div>
+          
+          <div class="form-group">
+            <label for="id_lab">Numero del Ordenador</label>
+            {{ form.numOrdenador}}
+          </div>
+          <div class="form-group">
+            <label for="id_lab">Breve descripcion</label>
+            {{ form.descripcion }}
+          </div>
+          {{mensaje}}
+          <input type="submit" class="btn btn-success btn-lg" value="Aceptar">
+    </form>
 </body>
 </html>

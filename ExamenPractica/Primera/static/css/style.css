@@ -1,0 +1,70 @@
+/* Estilos generales para la tabla */
+table {
+    width: 100%; /* La tabla ocupa el 100% del ancho disponible */
+    border-collapse: collapse; /* Elimina el espacio entre celdas */
+    margin: 20px 0; /* Margen superior e inferior */
+    font-family: Arial, sans-serif; /* Fuente */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilos para los encabezados de la tabla */
+thead th {
+    background-color: #007BFF; /* Color de fondo azul */
+    color: white; /* Texto en blanco */
+    padding: 12px 15px; /* Espaciado interno */
+    text-align: left; /* Alineación del texto a la izquierda */
+    font-weight: bold; /* Texto en negrita */
+    text-transform: uppercase; /* Convertir texto a mayúsculas */
+}
+
+/* Estilos para las celdas de la tabla */
+tbody td {
+    padding: 12px 15px; /* Espaciado interno */
+    border-bottom: 1px solid #ddd; /* Borde inferior gris */
+}
+
+/* Estilos para las filas impares (efecto zebra) */
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Fondo gris claro */
+}
+
+/* Estilos para las filas al pasar el ratón */
+tbody tr:hover {
+    background-color: #f1f1f1; /* Fondo gris más oscuro */
+}
+
+/* Estilos para los enlaces */
+a {
+    color: #007BFF; /* Color azul para los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Texto en negrita */
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+    color: #0056b3; /* Color azul más oscuro al pasar el ratón */
+}
+
+/* Estilos para el botón "Resolver" */
+a[href*="res"] {
+    background-color: #28a745; /* Fondo verde */
+    color: white; /* Texto en blanco */
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+a[href*="res"]:hover {
+    background-color: #218838; /* Fondo verde más oscuro al pasar el ratón */
+}
+
+/* Estilos para el botón "Detalles" */
+a[href*="det"] {
+    background-color: #17a2b8; /* Fondo azul claro */
+    color: white; /* Texto en blanco */
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+a[href*="det"]:hover {
+    background-color: #138496; /* Fondo azul más oscuro al pasar el ratón */
+}
