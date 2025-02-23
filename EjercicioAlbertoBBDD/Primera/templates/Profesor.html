@@ -1,0 +1,43 @@
+{% extends "Index.html"%}{%block content%}
+<a href="{% url 'log' %}">Cerrar sesión</a>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>DNI</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for item in alumnos%}
+        <tr>
+        <td>
+          {{item.nombre}}
+        </td>
+        <td>
+            {{item.email}}
+        </td>
+        <td>
+            {{item.telefono}}
+        </td>
+        <td>
+            {{item.dni}}
+        </td>   
+        <td>
+           <a href="{% url 'ed' id=item.dni %}">Editar Alumno</a>
+        </td>    
+        <td>
+            <a href="{% url 'el' id=item.dni %}">Eliminar Alumno</a>
+         </td>         
+    </tr>
+        {%endfor%}
+    </tbody>
+</table>
+<a href="{% url 'añ' id=ciclo %}">Añadir alumno</a>
+<a href="{% url 'tar' id=ciclo %}">Añadir tarea</a>
+{% if mensaje %}
+<h2>{{mensaje}}</h2>
+{% endif %}
+
+{%endblock%}

@@ -1,0 +1,41 @@
+{% extends "Index.html"%}{%block content%}
+<a href="{% url 'log' %}">Cerrar sesión</a>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Ciclo</th>
+            <th>Fecha</th>
+            <th>Completada</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for item in tareas%}
+        <tr>
+        <td>
+          {{item.nombre}}
+        </td>
+        <td>
+            {{item.ciclo}}
+        </td>
+        <td>
+            {{item.fechaEntrega}}
+        </td>
+        <td>
+            {{item.completada}}
+        </td>  
+        {% if item.completada == False %}
+        <td>
+           <a href="{% url 'en' id=item.nombre %}">Entregar</a>
+        </td>         
+        {% endif %}
+    </tr>
+        {%endfor%}
+    </tbody>
+</table>
+
+{% if mensaje %}
+<h2>{{mensaje}}</h2>
+{% endif %}
+
+{%endblock%}

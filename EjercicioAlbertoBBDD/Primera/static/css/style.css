@@ -1,0 +1,149 @@
+
+
+table {
+    width: 100%; 
+    border-collapse: collapse;
+    margin: 20px 0; 
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+
+thead th {
+    background-color: #007BFF; 
+    color: white;
+    padding: 12px 15px; 
+    text-align: left;
+    font-weight: bold; 
+    text-transform: uppercase; 
+}
+
+
+tbody td {
+    padding: 12px 15px; 
+    border-bottom: 1px solid #ddd; 
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; 
+}
+
+
+tbody tr:hover {
+    background-color: #f1f1f1; 
+}
+
+
+a {
+    color: #007BFF;
+    text-decoration: none; 
+    font-weight: bold; 
+}
+
+a:hover {
+    text-decoration: underline; 
+    color: #0056b3; 
+}
+
+a[href*="res"] {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px; 
+    border-radius: 5px; 
+}
+
+a[href*="res"]:hover {
+    background-color: #218838; 
+}
+
+
+a[href*="det"] {
+    background-color: #17a2b8;
+    color: white; 
+    padding: 5px 10px; 
+    border-radius: 5px;
+}
+
+a[href*="det"]:hover {
+    background-color: #138496;
+}
+    /* Estilos generales para el formulario */
+form {
+max-width: 600px; /* Ancho máximo del formulario */
+margin: 20px auto; /* Centrar el formulario */
+padding: 20px; /* Espaciado interno */
+background-color: #f9f9f9; /* Fondo gris claro */
+border-radius: 10px; /* Bordes redondeados */
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilos para los grupos de formulario */
+.form-group {
+margin-bottom: 15px; /* Espaciado entre grupos */
+}
+
+/* Estilos para las etiquetas */
+label {
+display: block; /* Hace que la etiqueta ocupe toda la línea */
+margin-bottom: 5px; /* Espaciado inferior */
+font-weight: bold; /* Texto en negrita */
+color: #333; /* Color del texto */
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+width: 100%; /* Ocupa el 100% del ancho disponible */
+padding: 10px; /* Espaciado interno */
+border: 1px solid #ddd; /* Borde gris */
+border-radius: 5px; /* Bordes redondeados */
+font-size: 16px; /* Tamaño de la fuente */
+color: #333; /* Color del texto */
+}
+
+/* Estilos para los campos de entrada al enfocar */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+border-color: #007BFF; /* Borde azul al enfocar */
+outline: none; /* Elimina el contorno predeterminado */
+box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra azul al enfocar */
+}
+
+/* Estilos para el botón de envío */
+input[type="submit"] {
+width: 100%; /* Ocupa el 100% del ancho disponible */
+padding: 10px; /* Espaciado interno */
+background-color: #28a745; /* Fondo verde */
+color: white; /* Texto en blanco */
+border: none; /* Sin borde */
+border-radius: 5px; /* Bordes redondeados */
+font-size: 16px; /* Tamaño de la fuente */
+cursor: pointer; /* Cambia el cursor a una mano */
+}
+
+/* Estilos para el botón de envío al pasar el ratón */
+input[type="submit"]:hover {
+background-color: #218838; /* Fondo verde más oscuro al pasar el ratón */
+}
+
+/* Estilos para los mensajes */
+.mensaje {
+margin-top: 15px; /* Espaciado superior */
+padding: 10px; /* Espaciado interno */
+border-radius: 5px; /* Bordes redondeados */
+font-size: 14px; /* Tamaño de la fuente */
+}
+
+.mensaje.error {
+background-color: #f8d7da; /* Fondo rojo claro para errores */
+color: #721c24; /* Texto rojo oscuro */
+}
+
+.mensaje.success {
+background-color: #d4edda; /* Fondo verde claro para éxito */
+color: #155724; /* Texto verde oscuro */
+}
