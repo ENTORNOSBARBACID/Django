@@ -1,0 +1,15 @@
+{% extends "Index.html"%}{% load static %}{%block content%}
+<img src="{% static 'images/freezer.jpg' %}" style="width: 300px;height: 400px;">
+<form action="{% url 'añCic' %}" method="POST">
+    <div class="form-group">
+        {% csrf_token %}
+    <label for="id_email">Ciclo</label><br>
+        {{ form.ciclo }}<br>
+    <label for="id_email">DNI Profesor</label><br>
+        {{ form.profesorDni }}<br>
+    </div>
+    <label for="id_email">Aulas</label><br>
+        {{ form.aulas }}<br>
+      <input type="submit" class="btn btn-success btn-lg" value="Aceptar">
+</form>
+{%endblock%}

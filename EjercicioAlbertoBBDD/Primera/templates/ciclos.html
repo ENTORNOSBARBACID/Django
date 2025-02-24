@@ -1,0 +1,32 @@
+{% extends "Index.html"%}{%block content%}
+<a href="{% url 'log' %}">Login</a>
+<table>
+    <thead>
+        <tr>
+            <th>Siglas</th>
+            <th>DNI Profesor</th>
+            <th>Clases</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for item in ciclos%}
+        <tr>
+        <td>
+          {{item.ciclo}}
+        </td>
+        <td>
+            {{item.profesorDni}}
+        </td>
+        <td>
+            {{item.aulas}}
+        </td>         
+    </tr>
+        {%endfor%}
+    </tbody>
+</table>
+<a href="{% url 'añCic' %}">Añadir Ciclo</a>
+{% if mensaje %}
+    <h2>{{mensaje}}</h2>
+{% endif %}
+
+{%endblock%}

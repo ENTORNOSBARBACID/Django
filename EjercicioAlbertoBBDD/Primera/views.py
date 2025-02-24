@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from Primera.forms import Login, Edit, Añadir,Tarea
+from Primera.forms import Login, Edit, Añadir,Tarea, AñadirProfesor, AñadirCic
 from django.db import IntegrityError
-from Primera.models import Profesor, Alumno, Tareas
+from Primera.models import Profesor, Alumno, Tareas, Ciclos
 
 def Log(request):
     sesion = None
@@ -135,9 +135,67 @@ def eliminar(request, id):
     alumno=Alumno.objects.get(dni=id)
     try:
         alumno.delete()
-        mensaje="Entregado"
+        mensaje="Borrado"
     except IntegrityError:
-        mensaje="No entregado"
+        mensaje="No Borrado"
         
     alumnos=Alumno.objects.filter(ciclo=alumno.ciclo)
     return render(request, 'Profesor.html', {'mensaje':mensaje, 'alumnos':alumnos, 'ciclo':alumno.ciclo})
+
+def verCiclos(request):
+    ciclos=Ciclos.objects.all()
+    return render(request, "ciclos.html" ,{'ciclos':ciclos})
+
+def verProfesores(request):
+    profesores=Profesor.objects.all()
+    return render(request, "ListaProfesores.html", {'profesores':profesores})
+
+def AñadirProf(request):
+    if request.method == "POST":
+        miFrm = AñadirProfesor(request.POST)
+        if(miFrm.is_valid()):
+            nombre=miFrm.cleaned_data['nombre']
+            email=miFrm.cleaned_data['email']
+            contraseña=miFrm.cleaned_data['contraseña']
+            ciclo=miFrm.cleaned_data['ciclo']
+            dni=miFrm.cleaned_data['dni']
+            prof=Profesor(nombre=nombre, email=email, contraseña=contraseña,ciclo=ciclo, dni=dni )
+            try:
+                prof.save()
+                mensaje="Guardado correctamente"
+            except IntegrityError:
+                mensaje="No Guardado"
+            profesores=Profesor.objects.all()
+            return render(request, "ListaProfesores.html", {'mensaje':mensaje, 'profesores':profesores})
+        else:
+            my_frm = miFrm
+                
+    else:
+        my_frm = AñadirProfesor()
+
+    return render(request, 'AñadirProfesor.html', {'form': my_frm})
+
+
+def añadirCiclo(request):
+    if request.method == "POST":
+        miFrm = AñadirCic(request.POST)
+        if(miFrm.is_valid()):
+            ciclo=miFrm.cleaned_data['ciclo']
+            profesorDni=miFrm.cleaned_data['profesorDni']
+            aulas=miFrm.cleaned_data['aulas']
+            ciclo=Ciclos(ciclo=ciclo, profesorDni=profesorDni, aulas=aulas)
+            try:
+                ciclo.save()
+                mensaje="Guardado correctamente"
+            except IntegrityError:
+                mensaje="No Guardado"
+            ciclos=Ciclos.objects.all()
+            return render(request, 'ciclos.html', {'mensaje':mensaje, 'ciclos':ciclos})
+        else:
+            my_frm = miFrm
+                
+    else:
+        my_frm = AñadirCic()
+
+    return render(request, 'AñadirCiclos.html', {'form': my_frm})
+

@@ -1,4 +1,4 @@
-{% extends "Index.html"%}{% load static %}{%block content%}
+{% extends "Index.html"%}{% load static %}{%block content%} 
 <img src="{% static 'images/freezer.jpg' %}" style="width: 300px;height: 400px;">
 <form action="{% url 'log' %}" method="POST">
     <div class="form-group">
@@ -13,6 +13,8 @@
       </div>
       <input type="submit" class="btn btn-success btn-lg" value="Aceptar">
 </form>
+<a href="{% url 'cic' %}">Ver ciclos</a>
+<a href="{% url 'verprof' %}">Ver profesores</a>
 {% if mensaje %}
 <h2>{{mensaje}}</h2>
 {% endif %}

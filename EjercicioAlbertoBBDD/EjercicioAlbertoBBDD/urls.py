@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Primera.views import Log, EditAl, AñadirAl, añadirTar, cambiarEstado, eliminar
+from Primera.views import Log, EditAl, AñadirAl, añadirTar, cambiarEstado, eliminar, AñadirProf, verCiclos, añadirCiclo, verProfesores
 
 urlpatterns = [
     path('', Log, name="log"),
@@ -25,5 +25,8 @@ urlpatterns = [
     path('añadirTar/<str:id>', añadirTar, name="tar"),
     path('entregar/<str:id>', cambiarEstado, name="en"),
     path('eliminar/<str:id>', eliminar, name="el"),
-
+    path('añadirProfesor/', AñadirProf, name="prof"),
+    path('ciclos/', verCiclos, name="cic"),
+    path('AñaCiclos/', añadirCiclo, name="añCic"),
+    path('profesores/', verProfesores, name="verprof"),
 ]

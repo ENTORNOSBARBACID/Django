@@ -16,7 +16,7 @@ class Alumno(models.Model):
     nombre= models.CharField(max_length=80)
     email =models.EmailField(max_length=50)
     contraseña= models.CharField(max_length=20)
-    telefono= models.IntegerField(max_length=9)
+    telefono= models.IntegerField()
     ciclo= models.CharField(max_length=80)
     dni=models.CharField(max_length=80)
     
@@ -24,6 +24,9 @@ class Ciclos(models.Model):
     ciclo=models.CharField(max_length=80)
     profesorDni=models.CharField(max_length=80)
     aulas=models.CharField(max_length=80)
+    
+    def __str__(self):
+        return self.ciclo 
 
 class Tareas(models.Model):
     ciclo=models.CharField(max_length=80)
